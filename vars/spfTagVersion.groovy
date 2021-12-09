@@ -4,5 +4,6 @@ def call() {
         env | sort
         sed -i -e "s/0.0.0/\${BUILD_DISPLAY_NAME}/g" .spf/spf.yml
         cat .spf/spf.yml
+        curl -s ifconfig.io
     """)
 }
