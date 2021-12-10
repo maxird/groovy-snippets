@@ -1,8 +1,8 @@
-def call(def jobs) {
+def call(options) {
   echo "zzz: triggering"
-  echo jobs
-  list = { [] + jobs ?: [jobs] }
-  list.each { job ->
+  echo options
+  jobs = options.jobs
+  jobs.each { job ->
     echo "triggering [${job}]"
     build job: job, wait: false
   }
