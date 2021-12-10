@@ -1,4 +1,8 @@
-def call() {
-    echo "zzz: triggering"
-    build job: 'IL-ChildSupport-web/childsupport-spf/develop', wait: false
+def call(def jobs) {
+  echo "zzz: triggering"
+  list = { [] + jobs ?: [jobs] }
+  list.each { job ->
+    echo "triggering [${job}]"
+    build job: job, wait: false
+  }
 }
