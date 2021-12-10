@@ -1,8 +1,8 @@
 def call(options) {
-  echo "zzz: triggering"
+  echo "trigger_jobs invoked"
   jobs = options.jobs
   jobs.each { job ->
-    echo "triggering [${job}]"
+    echo "triggering job [${job}]"
     build job: job, wait: false
   }
 }
